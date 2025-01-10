@@ -109,3 +109,18 @@ def irrational_sqrtn_to_contfrac(n:int, round=200):
         a = (int(math.sqrt(n)) + m) // d
         result.append(a)
     return result
+
+def ascii_to_unicode(s:str):
+    """
+    ASCII英文字母转化为Unicode
+    """
+    byte = s.encode()
+    ans = bytes()
+    for i in byte:
+        if i >= 0x41 and i <= 0x5a:
+            ans += b"\xf0\x9d\x90" + bytes([0x80+i-0x41])
+        elif i >= 0x61 and i <= 0x7a:
+            ans += b"\xf0\x9d\x90" + bytes([0x9a+i-0x61])
+        else:
+            ans += bytes([i])
+    return ans.decode()
