@@ -112,7 +112,7 @@ def irrational_sqrtn_to_contfrac(n:int, round=200):
 
 def ascii_to_unicode(s:str):
     """
-    ASCII英文字母转化为Unicode
+    ASCII英文字母转为Unicode
     """
     byte = s.encode()
     ans = bytes()

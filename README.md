@@ -15,3 +15,4 @@ Some algorithms samples on C++ and Python for both CTF.Crypto and ACM/OI. Btw,it
 | 无理数sqrt(n)分解为连分数 | irrational_sqrtn_to_contfrac |   ✔   | ❌ |
 |    连分数还原有理数x/y    |     contfrac_to_rational     |   ✔   | ❌ |
 |    连分数计算渐进分数    |  convergents_from_contfrac  |   ✔   | ❌ |
+|      ASCII转UNICODE      |       ascii_to_unicode       |   ✔   | ❌ |
