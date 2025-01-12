@@ -103,11 +103,12 @@ def irrational_sqrtn_to_contfrac(n:int, round=200):
     d = 1
     a = int(math.sqrt(n))
     result = [a]
-    for _ in range(round - 1):
-        m = d * a - m
-        d = (n - m * m) // d
-        a = (int(math.sqrt(n)) + m) // d
-        result.append(a)
+    if a**2 != n:
+        for _ in range(round - 1):
+            m = d * a - m
+            d = (n - m * m) // d
+            a = (int(math.sqrt(n)) + m) // d
+            result.append(a)
     return result
 
 def ascii_to_unicode(s:str):
