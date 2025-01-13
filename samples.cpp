@@ -84,3 +84,21 @@ vector<tuple<ll, ll>> convergents_from_contfrac(const vector<ll> &frac) {
     }
     return convs;
 }
+
+vector<ll> irrational_sqrtn_to_contfrac(ll n, int round = 200){
+    // 无理数sqrt(n)分解为连分数
+    // [a0, ..., an]
+    ll m = 0;
+    ll d = 1;
+    ll a = static_cast<ll>(sqrt(n));
+    vector<ll> result = {a};
+    if (a * a != n) {
+        for (int i = 0; i < round - 1; ++i) {
+            m = d * a - m;
+            d = (n - m * m) / d;
+            a = (static_cast<ll>(sqrt(n)) + m) / d;
+            result.push_back(a);
+        }
+    }
+    return result;
+}
